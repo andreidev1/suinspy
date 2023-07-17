@@ -54,7 +54,7 @@ pycryptodome = ">=3.6,<4.0"
 pynacl = ">=1.4,<2.0"
 
 [package.extras]
-develop = ["coverage (>=5.3)", "flake8 (>=3.8)", "isort (>=5.8)", "mypy (>=0.900)", "prospector[with_mypy,with_pyroma] (>=1.7)", "pytest (>=7.0)", "pytest-cov (>=2.10)"]
+develop = ["coverage (>=5.3)", "flake8 (>=3.8)", "isort (>=5.8)", "mypy (>=0.900)", "prospector[with_pyroma,with_mypy] (>=1.7)", "pytest (>=7.0)", "pytest-cov (>=2.10)"]
 
 [[package]]
 name = "canoser"
@@ -479,7 +479,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "typing-extensions"
-version = "4.7.0"
+version = "4.7.1"
 description = "Backported and Experimental Type Hints for Python 3.7+"
 category = "main"
 optional = false
