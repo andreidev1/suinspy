@@ -13,8 +13,8 @@ class SuiNSContract:
 @dataclass
 class NameObject:
     expiration_timestamp_ms: int
-    id: SuiAddress
     nft_id: SuiAddress
     target_address: SuiAddress
+    id: SuiAddress
     owner: Optional[SuiAddress]
     content_hash: Optional[str]
