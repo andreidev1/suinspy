@@ -1,21 +1,21 @@
 import requests
-
 from pysui.sui.sui_types.address import SuiAddress
 from pysui.sui.sui_clients.sync_client import SuiClient
 from pysui.sui.sui_builders.get_builders import GetDynamicFieldObject
 
-from types.objects import SuiNSContract, NameObject
-from utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
-from utils.parser import parse_registry_response
-from utils.queries import get_avatar, get_owner
+from suinspy.types.objects import SuiNSContract, NameObject
+from suinspy.utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
+from suinspy.utils.parser import parse_registry_response
+from suinspy.utils.queries import get_avatar, get_owner
 
 
 class SuiNsClient:
     """Sui Name Service Client SDK"""
 
-    def __init__(self, client: SuiClient, network_type: str, contract_objects=None):
+    def __init__(self, client: SuiClient, network_type: str, contract_objects: dict = None):
         self.client = client
         self.network_type = network_type
+        self.contract_objects = contract_objects
 
     def get_suins_contract_objects(self) -> SuiNSContract:
         """Get sui name service contract objects IDs"""
