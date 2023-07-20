@@ -7,7 +7,6 @@ authors = ["andreidev1 <d.andrei01@yahoo.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 pysui = "^0.27.1"
-pytest = "^7.4.0"
 requests = "^2.31.0"
 
 [tool.poetry.dev-dependencies]
