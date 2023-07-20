@@ -1,3 +1,17 @@
+## [0.1.1] - 2023-07-21
+
+### Added
+
+- pysui 0.30.0
+
+### Fixed
+
+- [bug](https://github.com/andreidev1/suinspy/issues/2) Fix `suinspy` package installation
+
+### Removed
+
+- pysui 0.27.1
+
 ## [0.1.0] - 2023-07-20
 
 ### Added
