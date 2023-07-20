@@ -4,6 +4,16 @@ Python Sui Name Service SDK Client - built by community with [pysui](https://git
 
 ## Quick Start
 
+Install `suinspy`
+
+`pip install suinspy`
+
+`poetry add suinspy`
+
+Using git support:
+
+`pip install git+https://git@github.com/andreidev1/suinspy.git`
+
 Configure `pysui` with your own data.
 
 ```py
