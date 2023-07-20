@@ -119,7 +119,7 @@ cffi = ">=1.3.0"
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
@@ -281,7 +281,7 @@ python-versions = ">=3.5"
 name = "iniconfig"
 version = "2.0.0"
 description = "brain-dead simple config-ini parsing"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -333,7 +333,7 @@ python-versions = ">=3.7"
 name = "pluggy"
 version = "0.13.1"
 description = "plugin and hook calling mechanisms for python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -389,7 +389,7 @@ python-versions = "*"
 
 [[package]]
 name = "pysui"
-version = "0.27.1"
+version = "0.29.0"
 description = "SUI client Python SDK"
 category = "main"
 optional = false
@@ -412,7 +412,7 @@ websockets = "11.0.3"
 name = "pytest"
 version = "7.4.0"
 description = "pytest: simple powerful testing with Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -473,7 +473,7 @@ python-versions = ">=3.7"
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -541,7 +541,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "57b185fcdba1cd03dd89cf63cb9b91c4f459a26438ee26c496f59dc320559981"
+content-hash = "bb599897204d9e371a4e38b379f831043c45f3892dd2051f6577f8b5b7401b1c"
 
 [metadata.files]
 anyio = []
