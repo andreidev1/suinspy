@@ -1,3 +1,17 @@
+## [0.1.2] - 2023-07-21
+
+### Added
+
+
+
+### Fixed
+
+- poetry lock version
+
+### Removed
+
+
+
 ## [0.1.1] - 2023-07-21
 
 ### Added
