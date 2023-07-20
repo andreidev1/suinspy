@@ -55,6 +55,11 @@ Fetch a name object including the owner and avatar:
 suins.get_name_object("suins.sui", show_owner=True, show_avatar=True)
 ```
 
+Fetch a SuiAddress linked to a name:
+```py
+suins.get_address("suins.sui")
+```
+
 ## Official SuiNS Resources
 
 [Official SuiNS Website](https://suins.io/)
