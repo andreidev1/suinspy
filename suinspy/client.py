@@ -1,16 +1,14 @@
 """Sui Name Service Python SDK"""
-import os
 import requests
-import json
 
 from pysui.sui.sui_types.address import SuiAddress
 from pysui.sui.sui_clients.sync_client import SuiClient
 from pysui.sui.sui_builders.get_builders import GetDynamicFieldObject, DynamicFields
 
-from type.objects import SuiNSContract, NameObject
-from utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
-from utils.parser import parse_registry_response
-from utils.queries import get_avatar, get_owner
+from suinspy.type.objects import SuiNSContract, NameObject
+from suinspy.utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
+from suinspy.utils.parser import parse_registry_response
+from suinspy.utils.queries import get_avatar, get_owner
 
 
 class SuiNsClient:
@@ -34,16 +32,18 @@ class SuiNsClient:
 
         if self.client:
             if self.network_type == "testnet":
+
                 contract_url = GCS_URL + TESTNET_JSON_FILE
-                # Send a HTTP request to Google APIs
+
                 response = requests.get(contract_url)
 
                 if response.status_code == 200:
                     self.contract_objects = response.json()
+
             if self.network_type == "devnet":
+
                 contract_url = GCS_URL + DEVNET_JSON_FILE
 
-                # Send a HTTP request to Google APIs
                 response = requests.get(contract_url)
 
                 if response.status_code == 200:
