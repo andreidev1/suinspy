@@ -479,7 +479,7 @@ python-versions = "*"
 
 [[package]]
 name = "pysui"
-version = "0.33.0"
+version = "0.32.0"
 description = "SUI client Python SDK"
 category = "main"
 optional = false
