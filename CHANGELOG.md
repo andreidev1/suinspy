@@ -1,3 +1,23 @@
+## [0.1.3] - 2023-08-23
+
+### Added
+
+- main network compatibility ( [#6](https://github.com/andreidev1/suinspy/issues/6) )
+- tests against main network ( [#7](https://github.com/andreidev1/suinspy/issues/7) )
+- new interfaces
+- `black` and `flake8` deps
+- tox.ini
+
+### Changed
+
+- pysui v0.29.0 to pysui v0.32.0
+
+### Fixed
+
+
+### Removed
+
+
 ## [0.1.2] - 2023-07-21
 
 ### Added
