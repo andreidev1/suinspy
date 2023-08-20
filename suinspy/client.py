@@ -1,41 +1,67 @@
+"""Sui Name Service Python SDK"""
+import os
 import requests
+import json
+
 from pysui.sui.sui_types.address import SuiAddress
 from pysui.sui.sui_clients.sync_client import SuiClient
-from pysui.sui.sui_builders.get_builders import GetDynamicFieldObject
+from pysui.sui.sui_builders.get_builders import GetDynamicFieldObject, DynamicFields
 
-from suinspy.types.objects import SuiNSContract, NameObject
+from suinspy.type.objects import SuiNSContract, NameObject
 from suinspy.utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
 from suinspy.utils.parser import parse_registry_response
 from suinspy.utils.queries import get_avatar, get_owner
 
 
 class SuiNsClient:
-    """Sui Name Service Client SDK"""
+    """Interact with SuiNS Package"""
 
     def __init__(self, client: SuiClient, network_type: str, contract_objects: dict = None):
         self.client = client
         self.network_type = network_type
         self.contract_objects = contract_objects
 
+    def send_request(self, contract_url):
+        response = requests.get(contract_url)
+        if response.status_code == 200:
+            return response.json()
+        return "Invalid request"
+    
+
     def get_suins_contract_objects(self) -> SuiNSContract:
         """Get sui name service contract objects IDs"""
 
         if self.client:
+
             if self.network_type == "testnet":
                 contract_url = GCS_URL + TESTNET_JSON_FILE
+                # Send a HTTP request to Google APIs
+                response = requests.get(contract_url)
+
+                if response.status_code == 200:
+                    self.contract_objects = response.json()
             if self.network_type == "devnet":
                 contract_url = GCS_URL + DEVNET_JSON_FILE
+            
+                # Send a HTTP request to Google APIs
+                response = requests.get(contract_url)
 
-            response = requests.get(contract_url)
+                if response.status_code == 200:
+                    self.contract_objects = response.json()
 
-            if response.status_code == 200:
-                self.contract_objects = response.json()
+            if self.network_type == "mainet":
+                prev_cwd = os.getcwd() + "/contract-mainet.json"
 
+                with open(prev_cwd, "r") as f:
+                    self.contract_objects = json.load(f)
+                    
+            
         return self.contract_objects
 
     def get_dynamic_field_object(
         self, parent_object_id: SuiAddress, key: None, type="0x1::string::String"
-    ):
+    ) -> DynamicFields:
+        
         dynamic_field_object = GetDynamicFieldObject(
             parent_object_id, dict(type=type, value=key)
         )
@@ -61,6 +87,7 @@ class SuiNsClient:
 
         name_object = parse_registry_response(registry_response.__dict__)
 
+        
         nft_id = name_object["nft_id"]
 
         if show_owner == True:
@@ -72,9 +99,9 @@ class SuiNsClient:
             avatar = get_avatar(self.client, nft_id)
 
             name_object.update(content_hash=avatar)
-
+        
         return name_object
-
+        
     def get_address(self, name: str) -> SuiAddress:
         """Get address of sui domain"""
 
