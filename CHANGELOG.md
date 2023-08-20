@@ -1,4 +1,4 @@
-## [0.1.3] - 2023-08-23
+## [0.2.0] - 2023-08-23
 
 ### Added
 
@@ -7,6 +7,22 @@
 - new interfaces
 - `black` and `flake8` deps
 - tox.ini
+
+### Changed
+
+
+
+### Fixed
+
+
+### Removed
+
+
+## [0.1.3] - 2023-08-23
+
+### Added
+
+
 
 ### Changed
 
