@@ -1,5 +1,5 @@
 from suinspy.client import SuiNsClient
-from suinspy.types.objects import NameObject
+from suinspy.type.objects import NameObject
 
 def test_get_suins_contract_objects(init_client):
 
