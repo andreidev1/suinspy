@@ -7,10 +7,10 @@ from pysui.sui.sui_types.address import SuiAddress
 from pysui.sui.sui_clients.sync_client import SuiClient
 from pysui.sui.sui_builders.get_builders import GetDynamicFieldObject, DynamicFields
 
-from suinspy.type.objects import SuiNSContract, NameObject
-from suinspy.utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
-from suinspy.utils.parser import parse_registry_response
-from suinspy.utils.queries import get_avatar, get_owner
+from type.objects import SuiNSContract, NameObject
+from utils.constants import GCS_URL, DEVNET_JSON_FILE, TESTNET_JSON_FILE
+from utils.parser import parse_registry_response
+from utils.queries import get_avatar, get_owner
 
 
 class SuiNsClient:
@@ -50,12 +50,14 @@ class SuiNsClient:
                     self.contract_objects = response.json()
 
             if self.network_type == "mainet":
-                prev_cwd = os.getcwd() + "/contract-mainet.json"
 
-                with open(prev_cwd, "r") as f:
-                    self.contract_objects = json.load(f)
-                    
-            
+
+                self.contract_objects = dict(packageId='0xd22b24490e0bae52676651b4f56660a5ff8022a2576e0089f79b3c88d44e08f0',
+                                    registry='0xe64cd9db9f829c6cc405d9790bd71567ae07259855f4fba6f02c84f52298c106',
+                                    reverseRegistry='0x2fd099e17a292d2bc541df474f9fafa595653848cbabb2d7a4656ec786a1969f',
+                                    suins='0x6e0ddefc0ad98889c04bab9639e512c21766c5e6366f89e696956d9be6952871'
+                                    )
+                
         return self.contract_objects
 
     def get_dynamic_field_object(
