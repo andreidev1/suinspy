@@ -1,17 +1,25 @@
 [tool.poetry]
 name = "suinspy"
-version = "0.1.2"
+version = "0.2.0"
 description = "Sui Name Service Python SDK Client"
-authors = ["andreidev1 <d.andrei01@yahoo.com>"]
+authors = ["andreidev1 <andreid.dev@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pysui = "^0.29.0"
+pysui = "^0.32.0"
 requests = "^2.31.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.0"
+black = "^23.7.0"
+flake8 = "^6.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+changelog = "https://github.com/andreidev1/suinspy/blob/main/CHANGELOG.md"
+repository = "https://github.com/andreidev1/suinspy"
+issues = "https://github.com/andreidev1/suinspy/issues"

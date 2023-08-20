@@ -1,7 +1,10 @@
+"""Interfaces"""
+
 from dataclasses import dataclass
 from typing import Optional
 
 from pysui.sui.sui_types.address import SuiAddress
+
 
 @dataclass
 class SuiNSContract:
@@ -9,6 +12,7 @@ class SuiNSContract:
     suins: SuiAddress
     registry: SuiAddress
     reverseRegistry: SuiAddress
+
 
 @dataclass
 class NameObject:

@@ -1,7 +1,8 @@
+"""Test against test network and main network"""
 from suinspy.client import SuiNsClient
-from suinspy.types.objects import NameObject
+from suinspy.type.objects import NameObject
 
-def test_get_suins_contract_objects(init_client):
+def test_get_suins_contract_objects_testnet(init_client):
 
     stub_suins_client = SuiNsClient(
         client=init_client,
@@ -21,7 +22,8 @@ def test_get_suins_contract_objects(init_client):
     assert stub_suins_client.contract_objects == contract_objects
 
 
-def test_get_name_object(init_client):
+def test_get_name_object_testnet(init_client):
+
     stub_name_object = NameObject(
         expiration_timestamp_ms='1716366440521',
         nft_id="0x229738a3c32e744c3d3df6b7c7984fc09e60eb540cff3eefcb38a44d535ba8b8",
@@ -36,3 +38,22 @@ def test_get_name_object(init_client):
     name_object = suins_client.get_name_object("suins.sui", show_owner=True, show_avatar=True)
 
     assert stub_name_object == name_object
+
+def test_get_suins_contract_objects_mainet(init_client):
+
+    stub_suins_client = SuiNsClient(
+        client=init_client,
+        network_type='mainet',         
+        contract_objects=dict(
+        packageId="0xd22b24490e0bae52676651b4f56660a5ff8022a2576e0089f79b3c88d44e08f0",
+        registry="0xe64cd9db9f829c6cc405d9790bd71567ae07259855f4fba6f02c84f52298c106",
+        reverseRegistry="0x2fd099e17a292d2bc541df474f9fafa595653848cbabb2d7a4656ec786a1969f",
+        suins="0x6e0ddefc0ad98889c04bab9639e512c21766c5e6366f89e696956d9be6952871"
+        )
+    )
+
+    suins = SuiNsClient(client=init_client, network_type='mainet')
+
+    contract_objects = suins.get_suins_contract_objects()
+
+    assert stub_suins_client.contract_objects == contract_objects

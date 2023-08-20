@@ -24,11 +24,11 @@ def cfg_user():
     """Config user"""
     cfg = SuiConfig.user_config(
         # Required
-        rpc_url="https://fullnode.testnet.sui.io:443/",
+        rpc_url="https://fullnode.mainnet.sui.io:443/",
         # Must be a valid Sui keystring (i.e. 'key_type_flag | private_key_seed' )
         prv_keys=["AIUPxQvxM18QggDDdTO0D0OD6PNVvtet50072d1grIyl"],
         # Needed for subscribing
-        ws_url="wss://fullnode.testnet.sui.io:443/",
+        ws_url="wss://fullnode.mainnet.sui.io:443/",
     )
     return cfg
 
@@ -37,10 +37,15 @@ client = SuiClient(cfg)
 
 ```
 
-Create an instance of SuinsClient and choose network type (`testnet` or `devnet`).
+Import `suinspy`
+```py
+from suinspy.client import SuiNsClient
+```
+
+Create an instance of SuinsClient and choose network type (`mainet`, `testnet` or `devnet`).
 
 ```py
-suins = SuiNsClient(client, 'testnet')
+suins = SuiNsClient(client, 'mainet')
 ```
 
 Fetch a name object:
