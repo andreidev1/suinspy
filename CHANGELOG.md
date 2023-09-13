@@ -1,3 +1,12 @@
+## [0.2.1] - 2023-09-13
+
+### Changed
+- pysui from `0.32.0` to `0.35.0`
+
+### Removed
+- `send_request()`
+
+
 ## [0.2.0] - 2023-08-23
 
 ### Added

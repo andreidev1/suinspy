@@ -21,12 +21,6 @@ class SuiNsClient:
         self.network_type = network_type
         self.contract_objects = contract_objects
 
-    def send_request(self, contract_url):
-        response = requests.get(contract_url)
-        if response.status_code == 200:
-            return response.json()
-        return "Invalid request"
-
     def get_suins_contract_objects(self) -> SuiNSContract:
         """Get sui name service contract objects IDs"""
 
